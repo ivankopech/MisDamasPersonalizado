@@ -6,7 +6,6 @@
 }
 
 .contenedor{
-    
     flex-flow: row wrap;
 }
 
@@ -96,21 +95,38 @@ nav a:hover{
 
 }
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
+
 
 footer{
     padding: 8px;
     text-align: center;
-    background-color: palevioletred;
+    background-color:  rgb(207, 101, 13);
     font-family: Arial, Helvetica, sans-serif;
     
 }
 .nombre{
     display: flex;
     justify-content: flex-end;
+}
+#partidanueva {
+    display: flex;
+    justify-content: center;
+}
+
+  #boton-empezar-partida {
+    color: white;
+    background-color:  rgb(207, 101, 13);
+    border-radius: 10px;
+    width: 225px;
+    height: 52px;
+    margin-top: 20px;
+    font-family: Arial;
+    text-shadow: 0 0 3px #333333;
+    border: 1px solid #84c5f3;
+    background-image:  rgb(207, 101, 13);
+    box-shadow: 0 0 8px 1px #888888;
+    font-size: 21px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px){
