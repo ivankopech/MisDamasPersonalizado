@@ -5,6 +5,11 @@
    
 }
 
+.contenedor{
+    
+    flex-flow: row wrap;
+}
+
 .color{
     background-color: white;
 }
@@ -16,10 +21,10 @@ body{
   }
 
   header{
-    padding: 20px;
     width: 100%;
+    padding: 20px;
     background-color: rgb(207, 101, 13);
-    text-align: center;
+    
     
     display: flex;
     justify-content: space-between;
