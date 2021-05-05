@@ -8,4 +8,4 @@ Version libre de un Juego de Damas que intenta aplicar todo lo aprendido de:
 - Flexbox
 
 ## Ver Online
-Este proyecto se encuentra en: https://github.com/ivankopech/MisDamasPersonalizado
+Este proyecto se encuentra en: [GitHub Pages](https://ivankopech.github.io/MisDamasPersonalizado/)
