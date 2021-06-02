@@ -7,12 +7,22 @@
 #chessContainer{
     width: 500px;
     height: 500px;
-    border: 2px solid black;
+    border: none;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 }
+@media screen and (max-width: 200px) {
+    div#chessContainer {
+      width: 100% !important;
+      overflow: hidden;
+      height: auto; } }
 
+@media screen and (max-width: 200px) {
+    div.abajo {
+         width: 100% !important;
+         overflow: hidden;
+        height: auto; } }
 
 .contenedor{
     flex-flow: row wrap;
