@@ -32,13 +32,6 @@
 .color{
     background-color: white;
 }
-/* html, body{
-    font: 15px/1.5 Arial, Helvetica,sans-serif;
-    padding:0;
-    margin:0;
-    background-color:#f4f4f4;
-    
-  } */
 
   header{
     width: 100%;
@@ -84,50 +77,12 @@ nav a:hover{
     background: black;
 }
 
-
-    /* html, body {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        color: #333333;
-        font-family: "Lato", Calibri, sans-serif;
-        font-size: 16px;
-        background-color: #b5aabd; } */
-        /* html h1, body h1 {
-          margin-top: 10px; }
-        html h2, body h2 {
-          font-size: 1.3em; }
-        html h3, body h3 {
-          font-size: 1.1em; }
-        html a, body a {
-          text-decoration: none;
-          color: #333333;
-          font-weight: 700; }
-          html a:hover, body a:hover {
-            text-decoration: underline; }
-        html hr, body hr {
-          border: 0;
-          height: 1px;
-          background-color: #333;
-          background-image: linear-gradient(to right, #333333, #ccc); }
-        html .clearfix, body .clearfix {
-          clear: both; } */
-      
-      div.contenedor {
-        /* position: center; */
-        
-        /* overflow: auto; */
+        div.contenedor {
         height: 100%;
         min-height: 100%;
         width: 100%; } 
       
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 200px) {
         div.contenedor {
           width: 100% !important;
           overflow: hidden;
@@ -153,72 +108,24 @@ nav a:hover{
           width: 8vmin;
           height: 8vmin;
           background-color: #11c2a4;
-          background-size: 65%;
-          background-repeat: no-repeat;
-          background-position: center;
           border-radius: 6vmin;
           display: inline-block;
-          box-sizing: border-box;
-          transition: all 0.2s linear;
           margin-top: 1vmin;
           margin-left: 1vmin;
-          cursor: pointer;
-          /* border: 1vmin solid #B93848;*/ } 
-          /* div#board .player1pieces .piece.selected {
-            box-shadow: 0 0 10px 5px #16A8C7; } */
+          
+        } 
+          
         div#board .player2pieces .piece {
           position: absolute;
           width: 8vmin;
           height: 8vmin;
           background-color: #F1F1FF;
-          background-size: 65%;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 6vmin;
+          border-radius: 6vmin; 
           display: inline-block;
-          box-sizing: border-box;
-          transition: all 0.2s linear;
           margin-top: 1vmin;
           margin-left: 1vmin;
-          cursor: pointer;
-          /* border: 1vmin solid #8b8bff; }
-          div#board .player2pieces .piece.selected {
-            box-shadow: 0 0 10px 5px #16A8C7; } */
-          }
-      /*# sourceMappingURL=style.css.map */
-          
-
-
-/* .con-tablero{
-    width: 560px;
-    height: 560px;
-    margin: 40px auto;
-    border-style: none;
-    box-sizing: content-box;
-    cursor: pointer;
-    border: 1px solid black
-    
-}   
-.con-tablero .tab-fila{
-    display: flex;
-}
-
-
-.con-tablero .tab-fila .tab-col{
-    background-color: rgb(255, 255, 255);
-    width: 70px ;
-    height: 70px;
-    text-align: center;
-    user-select: none;
-    font-size: 55px;
-    color:  rgb(255, 255, 255);
-    text-shadow: 0px .5px rgb(255, 255, 255);
-}
-
-.con-tablero .tab-fila .black{
-    background-color:  rgb(0, 0, 0);
-} */
-
+        }
+      
 .contenedor-marcador{
     display: flex;
     border: none;
