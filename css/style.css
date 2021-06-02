@@ -43,7 +43,6 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 
 header .logo{
@@ -76,7 +75,6 @@ nav a{
 nav a:hover{
     background: black;
 }
-
         div.contenedor {
         height: 100%;
         min-height: 100%;
@@ -150,7 +148,6 @@ nav a:hover{
 .divisor-tablero{
     background-color: black;
 }
-
 
 footer{
     padding: 8px;
