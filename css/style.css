@@ -1,182 +1,178 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
-#chessContainer{
-    width: 500px;
-    height: 500px;
-    border: none;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-}
-@media screen and (max-width: 200px) {
-    div#chessContainer {
-      width: 100% !important;
-      overflow: hidden;
-      height: auto; } }
-
-@media screen and (max-width: 200px) {
-    div.abajo {
-         width: 100% !important;
-         overflow: hidden;
-        height: auto; } }
-
-.contenedor{
-    flex-flow: row wrap;
-    
+body {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
 }
 
-.color{
-    background-color: white;
-}
-
-  header{
-    width: 100%;
-    padding: 20px;
-    background-color: rgb(207, 101, 13);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+header{
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(207, 101, 13);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 header .logo{
-    color: white;
-    font-size: 30px;
+  color: white;
+  font-size: 30px;
 }
 header .logo a{
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 header .logo img{
-    width: 50px;
-    vertical-align: top;
-    line-height: 50px;
+  width: 50px;
+  vertical-align: top;
+  line-height: 50px;
 }
 
 nav{
-    display: flex;
-    flex-direction: row;
-    background-color: #333;
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
 
 }
 
 nav a{
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  
 }
 nav a:hover{
-    background: black;
+  background: black;
 }
-        div.contenedor {
-        height: 100%;
-        min-height: 100%;
-        width: 100%; } 
-      
-      @media screen and (max-width: 200px) {
-        div.contenedor {
-          width: 100% !important;
-          overflow: hidden;
-          height: auto; } }
-      
-      div#board {
-        position: absolute;
-        top: calc(80% - 40vmin);
-        left: calc(50% - 40vmin);
-        width: 80vmin;
-        height: 80vmin;
-        border-radius: 2px;
-        box-shadow: 1px 1px 3px #232621;
-        background-color: #B93848;
-        overflow: hidden; }
-        div#board .tile {
-          width: 10vmin;
-          height: 10vmin;
-          position: absolute;
-          background-color: #232621; }
-        div#board .player1pieces .piece {
-          position: absolute;
-          width: 8vmin;
-          height: 8vmin;
-          background-color: #11c2a4;
-          border-radius: 6vmin;
-          display: inline-block;
-          margin-top: 1vmin;
-          margin-left: 1vmin;
-          
-        } 
-          
-        div#board .player2pieces .piece {
-          position: absolute;
-          width: 8vmin;
-          height: 8vmin;
-          background-color: #F1F1FF;
-          border-radius: 6vmin; 
-          display: inline-block;
-          margin-top: 1vmin;
-          margin-left: 1vmin;
-        }
-      
+header .turn {
+  font-size: 35px;
+  justify-content: center;
+  animation: flash;
+  animation-duration: 1.5s;
+}
+
+.game {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 7%;
+}
+
+table {
+  border: 2px solid black;
+  margin: 0px auto;
+}
+
+td {
+  background-color: #222121;
+  width: 70px;
+  height: 70px;
+}
+
+.white {
+  background-color: #f5eded;
+}
+
+.ficha-naranja,
+.ficha-azul {
+  width: 45px;
+  height: 45px;
+  border: 2px solid aquamarine;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+.ficha-naranja {
+  background-color: #f88120;
+}
+
+.ficha-azul {
+  background-color: #2085f8;
+}
+
+.rey.ficha-naranja {
+  background-color: #944e15;
+}
+
+.rey.ficha-azul {
+  background-color: #134b8b;
+}
+
+button {
+  display: inline-block;
+  height: 34px;
+  width: 180px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  text-align: center;
+}
+
 .contenedor-marcador{
-    display: flex;
-    border: none;
-    justify-content: center;
-    
+  display: flex;
+  border: none;
+  justify-content: center;
+  
 }
 
 .contenedor-marcador div{
-    
-    width: 50px;
-    margin: none;
-    text-align: center;
-    line-height: 65px;
-    font-size: 30px;
-    border: 2px solid black;
+  
+  width: 50px;
+  margin: none;
+  text-align: center;
+  line-height: 65px;
+  font-size: 30px;
+  border: 2px solid black;
 }
 
 .player{
-    background-color:  rgb(207, 101, 13);
+  background-color:  rgb(207, 101, 13);
 }
 
 .divisor-tablero{
-    background-color: black;
+  background-color: black;
 }
 
 footer{
-    padding: 8px;
-    text-align: center;
-    background-color:  rgb(207, 101, 13);
-    font-family: Arial, Helvetica, sans-serif;
-    
+  padding: 8px;
+  text-align: center;
+  background-color:  rgb(207, 101, 13);
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 #partidanueva {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-  #boton-empezar-partida {
-    color: white;
-    background-color:  rgb(207, 101, 13);
-    border-radius: 10px;
-    width: 225px;
-    height: 52px;
-    margin-top: 20px;
-    font-family: Arial;
-    text-shadow: 0 0 3px #333333;
-    border: 1px solid #84c5f3;
-    background-image:  rgb(207, 101, 13);
-    box-shadow: 0 0 8px 1px #888888;
-    font-size: 21px;
-    cursor: pointer;
+#boton-empezar-partida {
+  color: white;
+  background-color:  rgb(207, 101, 13);
+  border-radius: 10px;
+  width: 225px;
+  height: 52px;
+  margin-top: 20px;
+  font-family: Arial;
+  text-shadow: 0 0 3px #333333;
+  border: 1px solid #84c5f3;
+  background-image:  rgb(207, 101, 13);
+  box-shadow: 0 0 8px 1px #888888;
+  font-size: 21px;
+  cursor: pointer;
 }
+
 
 @media screen and (max-width: 500px){
     nav, .row{
