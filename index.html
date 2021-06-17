@@ -7,7 +7,7 @@
     <title>MisDamasPersonalizado</title>
     <link rel="stylesheet" href="css/style.css">
     
-    
+
 </head>
 <body>
     <header>
@@ -19,33 +19,55 @@
     <nav>
         <a href="file:///C:/Users/ivank/OneDrive/Documentos/Facultad/4to/LPPA/Login/index.html">Login</a>
     </nav>
-    <h1 class="turn"></h1>
-
     <br>
 
-    <div class="contenedor-marcador">
-        <div class="player">P1</div>
-        <div>0</div>
-        <div class="divisor-tablero"></div>
-        <div>0</div>
-        <div class="player">P2</div>
-    </div>
-    
-    <div class="game"></div>
-    
-    <div class="abajo">
-        <div id="partidanueva">
-            <button id="boton-empezar-partida">Nueva partida</button>
-           </div>
-           
-           <br>
-           
-           <footer>
-            <p>Si quiere ver el reglamento, visite: <a href="https://www.mundijuegos.com.ar/multijugador/damas/reglas/">Reglas del juego</a> //  Ivan Kopech, 2021</p>
-            
-           </footer>
-    </div>
+		<main>
+			
+			<div id="jugador1" class="contenedorJugadores">
+				<div class="casillasNegras">
+					<div class="damasRojas"> </div>
+				</div>	
+		
+				<p>Jugador 1</p> 
+				<p>Puntos:</p>
+				<p id="puntos-jugador1" class="puntos">0</p>
+			</div>
+			
+			<div id="jugador2" class="contenedorJugadores">
+				<div class="casillasNegras">
+					<div class="damasVerdes"> </div>
+				</div>
+			
+				<p>Jugador 2</p>
+				<p>Puntos:</p>
+				<p id="puntos-jugador2" class="puntos">0</p>
+			</div>
 
-<script src="app.js"></script>
+			
+		</main>
+		<div>
+			<h2 class="nombreTurno">Turno: Rojo</h2>
+		</div>
+		<main>
+			
+			<!--Tablero-->
+			<div id="tablero" class="tablero"></div>
+		</main>
+
+        <div class="abajo">
+			<div id="partidanueva">
+				<button id="boton-empezar-partida">Nueva partida</button>
+			   </div>
+			   
+			   <br>
+			   
+			   <footer>
+				<p>Si quiere ver el reglamento, visite: <a href="https://www.mundijuegos.com.ar/multijugador/damas/reglas/">Reglas del juego</a> //  Ivan Kopech, 2021</p>
+				
+			   </footer>
+		</div>
+    
+		<script src="app.js"></script>
+
 </body>
 </html> 
