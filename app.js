@@ -1,6 +1,7 @@
 var quitarEvento = false
 var contadorClicks = 0
 var turno = 1
+// var cellIdOfSelectedPiece = '';
 var fichasAmarillas = document.getElementsByClassName('damasRojas');
 var obtenerRoja = document.querySelectorAll('.damasRojas');
 var obtenerVerde = document.querySelectorAll('damasVerdes');
@@ -288,6 +289,7 @@ function moverFicha(filaMover, columnaMover, tipoComer) {
     newDama.className = 'damasVerdes'
     tableroArray[filaMover][columnaMover] = 2;
   }
+  //FICHA REY
   divPadre.appendChild(newDama)
  
   //ELIMINACION DE LA FICHA ANTIGUA
@@ -345,6 +347,18 @@ function moverFicha(filaMover, columnaMover, tipoComer) {
   }
 
   quitarEventosClickPosibles()
+
+  var data = {
+    type: 'piece-movement',
+    payload: {
+      jugador: turnoText.innerHTML,
+      posicion: divViejo.id,
+    },
+  };
+  
+
+  EnviarAlServidor('https://reqres.in/api/login', data);
+  console.log(data);
 }
 
 
@@ -435,3 +449,25 @@ function resetearObjeto() {
 }
 
 agregarEvento()
+
+
+
+function EnviarAlServidor(url, data) {
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonResponse) {
+      console.log(jsonResponse);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
