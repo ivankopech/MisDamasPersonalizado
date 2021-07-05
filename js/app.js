@@ -2,7 +2,7 @@ var quitarEvento = false
 var contadorClicks = 0
 var turno = 1
 // var cellIdOfSelectedPiece = '';
-var fichasAmarillas = document.getElementsByClassName('damasRojas');
+var fichasRojas = document.getElementsByClassName('damasRojas');
 var obtenerRoja = document.querySelectorAll('.damasRojas');
 var obtenerVerde = document.querySelectorAll('damasVerdes');
 var fichasVerdes = document.getElementsByClassName('damasVerdes');
@@ -94,8 +94,8 @@ crearDamas()
 
 function agregarEvento() {
   if (turno === 1) {
-    for (var i = 0; i < fichasAmarillas.length; i++) {
-      fichasAmarillas[i].addEventListener('click', obtenerFichaSeleccionada)
+    for (var i = 0; i < fichasRojas.length; i++) {
+      fichasRojas[i].addEventListener('click', obtenerFichaSeleccionada)
     }
   } else {
     for (var i = 0; i < fichasVerdes.length; i++) {
@@ -387,8 +387,8 @@ function quitarEventosClickPosibles(){
 
 function quitarEventosClicks() {
  if (turno === 1) {
-    for (var i = 0; i < fichasAmarillas.length; i++) {
-      fichasAmarillas[i].removeEventListener('click', obtenerFichaSeleccionada)
+    for (var i = 0; i < fichasRojas.length; i++) {
+      fichasRojas[i].removeEventListener('click', obtenerFichaSeleccionada)
     }
   } else {
     for (var i = 0; i < fichasVerdes.length; i++) {
@@ -406,10 +406,10 @@ function actualizarPuntos() {
     parrafoPuntosJugador.innerHTML = 13 - fichasVerdes.length
   } else{
     parrafoPuntosJugador = document.getElementById('puntos-jugador2')
-    parrafoPuntosJugador.innerHTML = 13 - fichasAmarillas.length
+    parrafoPuntosJugador.innerHTML = 13 - fichasRojas.length
   }
   
-  if (fichasAmarillas.length == 1) {
+  if (fichasRojas.length == 1) {
     alert('Jugador 2 ganó la partida');
   }
  if (fichasVerdes.length == 1) {
