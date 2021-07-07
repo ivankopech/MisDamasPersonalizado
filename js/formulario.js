@@ -6,7 +6,6 @@ formulario.addEventListener('submit', enviarDatos);
 function enviarDatos(i) {
 i.preventDefault();
 var nombre = document.getElementById('nombre').value;
-console.log(nombre);
 var correo = document.getElementById('correo').value;
 var mensaje = document.getElementById('mensaje').value;
 
