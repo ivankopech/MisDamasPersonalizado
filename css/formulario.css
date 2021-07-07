@@ -1,12 +1,12 @@
-* {
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  body {
+  /* body {
     background-image: url('fondo.jpg');
-  }
+  } */
   .titulo{
       text-align: center;
   }
@@ -38,7 +38,7 @@
     font-family: 'calibri';
     font-size: 18px;
     color: white;
-  }
+  } */
   
   .form-register p {
     height: 40px;
@@ -65,4 +65,8 @@
     color: white;
     margin: 16px 0;
     font-size: 16px;
-  }
+  }  
+
+
+
+  

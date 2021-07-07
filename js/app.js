@@ -357,8 +357,8 @@ function moverFicha(filaMover, columnaMover, tipoComer) {
   };
   
 
-  EnviarAlServidor('https://reqres.in/api/login', data);
-  console.log(data);
+  //EnviarAlServidor('https://reqres.in/api/login', data);
+  //console.log(data);
 }
 
 
@@ -452,7 +452,7 @@ agregarEvento()
 
 
 
-function EnviarAlServidor(url, data) {
+function EnviarAlServidor(url, data) {   //360
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data),
