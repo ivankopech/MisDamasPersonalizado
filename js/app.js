@@ -1,5 +1,7 @@
 var quitarEvento = false
 var contadorClicks = 0
+var hay_juego = false;
+var arrayTablero = tableroArray;
 var turno = 1
 // var cellIdOfSelectedPiece = '';
 var fichasRojas = document.getElementsByClassName('damasRojas');
@@ -10,6 +12,7 @@ var jugador1 = document.getElementById('jugador1');
 var jugador2 = document.getElementById('jugador2');
 var turnoText = document.querySelector(".nombreTurno");
 var fichas;
+
 
 var fichaSeleccionada = {
   idFila: null,
@@ -125,9 +128,6 @@ function obtenerFichaSeleccionada(ev) {
 //       fichaSeleccionada.idColumna,
 //     )
 
-//     // llamar a buscar espacios disponibles buscarEspaciosDisponibles()
-//   }
-// }
 
 function buscarEspaciosDisponibles(fila, columna) {
 
@@ -448,26 +448,56 @@ function resetearObjeto() {
     contadorClicks = 0
 }
 
-agregarEvento()
+agregarEvento(); 
 
 
 
-function EnviarAlServidor(url, data) {   //360
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (jsonResponse) {
-      console.log(jsonResponse);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+// function EnviarAlServidor(url, data) {   //360
+//   fetch(url, {
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//     headers: {
+//       'Content-type': 'application/json; charset=UTF-8',
+//     },
+//   })
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (jsonResponse) {
+//       console.log(jsonResponse);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// }
+
+// GUARDAR JUGADAS
+
+var guardar, cargar;
+
+guardar = document.getElementsByClassName('boton-guardar-partida').addEventListener('click', guardarJugada);
+cargar = document.getElementsByClassName('boton-cargar-partida').addEventListener('click', cargarJugada);
+
+function guardarJugada() {
+    localStorage.setItem('tablero', JSON.stringify(tableroArray))
+    localStorage.setItem('turno', turno)
+}
+
+function cargarJugada() {
+  
+  tableroArray = JSON.parse(localStorage.getItem('tablero'))
+  turno = localStorage.getItem(turno)
+  resetearTablero()
+}
+
+function resetearTablero() {
+ 
+  var tablero = document.getElementById('tablero')
+
+  tablero.innerHTML = ''
+  quitarEvento = true
+
+  crearTablero()
+  resetearObjeto()
 }
 
