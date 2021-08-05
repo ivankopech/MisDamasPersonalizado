@@ -1,43 +1,34 @@
-var servidorURL = 'https://reqres.in/api/login';
 
-var formulario = document.getElementById('form-register');
-formulario.addEventListener('submit', enviarDatos);
+var nombre = document.getElementById('nombre');
+var email = document.getElementById('correo');
+var comentario = document.getElementById('comentario');
+var enviarMail = document.getElementById('enviar-mensaje');
 
-function enviarDatos(i) {
-i.preventDefault();
-var nombre = document.getElementById('nombre').value;
-var correo = document.getElementById('correo').value;
-var mensaje = document.getElementById('mensaje').value;
 
-var datos = {
-    nombre: nombre,
-    correo: correo,
-    mensaje: mensaje,
-};
-console.log(datos);
-enviarServidor(servidorURL, datos);
+enviarMail.addEventListener('click', validaciones)
+
+function validaciones(){
+        
+    if (nombre.value.length >= 3 && nombre.value.length <= 25) {
+        if(email.value.includes('@')){
+            if(comentario.value.length >= 3 && comentario.value.length <= 200){
+                envioDeMail()
+            }else{
+                alert('El nombre debe contener entre 3 y 25 caracteres.')
+                return
+            }
+        }else{
+            alert('Mail inexistente')
+            return
+        }
+    }else{
+        alert('El mensaje debe contener entre 3 y 200 caracteres.')
+        return
+    }
 }
 
-function enviarServidor(url, datos) {
-    fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(datos),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (jsonResponse) {
-        console.log(jsonResponse);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+function envioDeMail(){
+    window.open(`mailto:ivankopech@gmail.com?subject=Ayuda%20soporte:%20
+    ${nombre.value.replace(/ /g, '%20')}&body=${comentario.value.replace(/ /g, '%20')}.%20Enviado%20por:%20${email.value}`)
 }
-
-
-
-
 
